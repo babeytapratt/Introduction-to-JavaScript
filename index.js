@@ -74,44 +74,41 @@ console.log(dogYears(39));
 
 
 function dogFeeder(weightInPounds, ageInYears) {
-  let adultDog = 1
-  let puppy = (0-.9)
-
-    if (weightInPounds <= 5 && adultDog) {
-    return weightInPounds * .05;
-    } else if (weightInPounds > 5 <= 10 && adultDog) {
-    return weightInPounds * .04;
-    } else if (weightInPounds > 10 <= 15 && adultDog) {
+    if (weightInPounds <= 5 && age >= 1) {
+    return weightInPounds * 0.05;
+    } else if (weightInPounds >= 6 && weightInPounds <= 10 && age >= 1) {
+    return weightInPounds * 0.04;
+    } else if (weightInPounds >= 11 && weightInPounds <= 15 && age >= 1) {
     return weightInPounds * .03;
-    } else if (weightInPounds > 15 && adultDog) {
+    }else if (weightInPounds > 15 && age >= 1) {
     return weightInPounds * .02;
-    } else if (weightInPounds < 5 && ageInYears >= .02 <= .04) {
-    return ageInYears * .1;
-    } else if (weightInPounds < 5 && ageInYears >= .05 <= .07) {
-    return ageInYears * .05;
-    } else if (weightInPounds < 5 && ageInYears >= .08 <= .09) {
-    return ageInYears * .04;
-    } else if (weightInPounds > 5 <= 10 && ageInYears >= .02 <= .04) {
-    return ageInYears * .1;
-    } else if (weightInPounds > 5 <= 10 && ageInYears >= .05 <= .07) {
-    return ageInYears * .05;
-    } else if (weightInPounds > 5 <= 10 && ageInYears >= .08 <= .09) {
-    return ageInYears * .04;
-    } else if (weightInPounds > 10 <= 15 && ageInYears >= .02 <= .04) {
-    return ageInYears * .1;
-    } else if (weightInPounds > 10 <= 15 && ageInYears >= .05 <= .07) {
-    return ageInYears * .05;
-    } else if (weightInPounds > 10 <= 15 && ageInYears >= .08 <= .09) {
-    return ageInYears * .04;
-    } else if (weightInPounds > 15 && ageInYears >= .02 <= .04) {
-    return ageInYears * .1;
-    } else if (weightInPounds > 15 && ageInYears >= .05 <= .07) {
-    return ageInYears * .05;
-    } else if (weightInPounds > 15 && ageInYears >= .08 <= .09) {
-    return ageInYears * .04;
+    } else if (weightInPounds < 5 && ageInYears >= .02 && ageInYears <= .04) {
+    return ageInYears * 0.1;
+    } else if (weightInPounds < 5 && ageInYears >= .05 && ageInYears <= .07) {
+    return ageInYears * 0.05;
+    } else if (weightInPounds < 5 && ageInYears >= .08 && ageInYears <= .09) {
+    return ageInYears * 0.04;
+    } else if (weightInPounds >= 6 && weightInPounds <= 10 && ageInYears >= .02 && ageInYears <= .04) {
+    return weightInPounds * 0.1;
+    } else if (weightInPounds >= 6 && weightInPounds <= 10 && ageInYears >= .05 && ageInYears <= .07) {
+    return weightInPounds * 0.05;
+    } else if (weightInPounds >= 6 && weightInPounds <= 10 && ageInYears >= .08 && ageInYears <= .09) {
+    return weightInPounds * 0.04;
+    } else if (weightInPounds >= 11 && weightInPounds <= 15 && ageInYears >= .02 && ageInYears <= .04) {
+    return weightInPounds * 0.1;
+    } else if (weightInPounds >= 11 && weightInPounds <= 15 && ageInYears >= .05 && ageInYears <= .07) {
+    return weightInPounds * 0.05;
+    } else if (weightInPounds >= 11 && weightInPounds <= 15 && ageInYears >= .08 && ageInYears <= .09) {
+    return weightInPounds * 0.04;
+    } else if (weightInPounds > 15 && ageInYears >= .02 && ageInYears <= .04) {
+    return weightInPounds * 0.1;
+    } else if (weightInPounds > 15 && ageInYears >= .05 && ageInYears <= .07) {
+    return weightInPounds * 0.05;
+    } else if (weightInPounds > 15 && ageInYears >= .08 && ageInYears <= .09) {
+    return weightInPounds * 0.04;
 }
 
-console.log(dogFeeder(12,.07));
+console.log(dogFeeder(12, .07));
 
 
 
@@ -183,9 +180,9 @@ console.log(toCentimeters(3));
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
- function annoyingSong (numberLeftOver)  {
-   for(let i = 100; i < annoyingSong.length; i-- ) {
-     if (annoyingSong[i] < 100) {
+ function annoyingSong ()  {
+   for(let i = 0; i <= numbers.length; i-- ) {
+     if (numbers.length < 100) {
        return ("[i]bottles of beer on the wall,[i]bottles of beer. Take one down, pass it around,[i]bottles of beer on the wall!");
      }
    }
