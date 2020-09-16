@@ -8,7 +8,7 @@ var votingAge = 19;
     console.log("false")
   }
 
-console.log(votingAge)
+console.log(votingAge);
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
@@ -23,9 +23,9 @@ console.log(drink);
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
-Number('1999');
 
-console.log(Number);
+
+ console.log(Number('1999'));
 
 
 
@@ -75,37 +75,38 @@ console.log(dogYears(39));
 
 function dogFeeder(weightInPounds, ageInYears) {
     if (weightInPounds <= 5 && age >= 1) {
-    return weightInPounds * 0.05;
+      return weightInPounds * 0.05;
     } else if (weightInPounds >= 6 && weightInPounds <= 10 && age >= 1) {
-    return weightInPounds * 0.04;
+      return weightInPounds * 0.04;
     } else if (weightInPounds >= 11 && weightInPounds <= 15 && age >= 1) {
-    return weightInPounds * .03;
+      return weightInPounds * .03;
     }else if (weightInPounds > 15 && age >= 1) {
-    return weightInPounds * .02;
+      return weightInPounds * .02;
     } else if (weightInPounds < 5 && ageInYears >= .02 && ageInYears <= .04) {
-    return ageInYears * 0.1;
+      return ageInYears * 0.1;
     } else if (weightInPounds < 5 && ageInYears >= .05 && ageInYears <= .07) {
-    return ageInYears * 0.05;
+      return ageInYears * 0.05;
     } else if (weightInPounds < 5 && ageInYears >= .08 && ageInYears <= .09) {
-    return ageInYears * 0.04;
+      return ageInYears * 0.04;
     } else if (weightInPounds >= 6 && weightInPounds <= 10 && ageInYears >= .02 && ageInYears <= .04) {
-    return weightInPounds * 0.1;
+      return weightInPounds * 0.1;
     } else if (weightInPounds >= 6 && weightInPounds <= 10 && ageInYears >= .05 && ageInYears <= .07) {
-    return weightInPounds * 0.05;
+      return weightInPounds * 0.05;
     } else if (weightInPounds >= 6 && weightInPounds <= 10 && ageInYears >= .08 && ageInYears <= .09) {
-    return weightInPounds * 0.04;
+      return weightInPounds * 0.04;
     } else if (weightInPounds >= 11 && weightInPounds <= 15 && ageInYears >= .02 && ageInYears <= .04) {
-    return weightInPounds * 0.1;
+      return weightInPounds * 0.1;
     } else if (weightInPounds >= 11 && weightInPounds <= 15 && ageInYears >= .05 && ageInYears <= .07) {
-    return weightInPounds * 0.05;
+      return weightInPounds * 0.05;
     } else if (weightInPounds >= 11 && weightInPounds <= 15 && ageInYears >= .08 && ageInYears <= .09) {
-    return weightInPounds * 0.04;
+      return weightInPounds * 0.04;
     } else if (weightInPounds > 15 && ageInYears >= .02 && ageInYears <= .04) {
-    return weightInPounds * 0.1;
+      return weightInPounds * 0.1;
     } else if (weightInPounds > 15 && ageInYears >= .05 && ageInYears <= .07) {
-    return weightInPounds * 0.05;
+      return weightInPounds * 0.05;
     } else if (weightInPounds > 15 && ageInYears >= .08 && ageInYears <= .09) {
-    return weightInPounds * 0.04;
+      return weightInPounds * 0.04;
+    }
 }
 
 console.log(dogFeeder(12, .07));
@@ -132,27 +133,73 @@ console.log(dogFeeder(12, .07));
 // var paper = 2
 // var scissors = 3
 
- function RockPaperScissors(input) {
-   let random = Math.floor(Math.random() * 3) + 1;
-   let compChoice;
-   let lowercaseInput = input.toLowerCase();
-
-   if (random === 1)  {
-     compChoice = "rock";
-   }  else if (random === 2)  {
-     compChoice = "paper";
-   }  else if (random === 3)  {
-     compChoice = "scissors";
+const getUserChoice = (userInput) => {
+  if (userInput.toLowerCase() === 'rock'){
+   return userInput;
    }
+  else if (userInput.toLowerCase() === 'paper'){
+     return userInput;
+   }
+   else if (userInput.toLowerCase() === 'scissors'){
+     return userInput;
+   }
+   else {console.log('Not Valid. Danger Will Robinson!')}
+   };
 
-   console.log(RockPaperScissors(1));
+  const getComputerChoice = () => {
+   const randomNumber = (Math.floor(Math.random() * 3));
+   if (randomNumber === 0){
+     return 'Rock';
+   }
+   else if (randomNumber === 1){
+     return 'Paper';
+   }
+   else if (randomNumber === 2){
+   return 'Scissors';
+   }
+     }
+
+const determineWinner = (userChoice,computerChoice) => {
+  if (userChoice === computerChoice){
+    return 'The game is a tie!';
+  }
+  else if (userChoice === 'rock'){
+    if (computerChoice === 'paper'){
+      return 'The computer wins!';
+    }
+    else {
+      return 'You won!';
+    }
+  }
+  else if (userChoice === 'paper'){
+    if (computerChoice === 'scissors'){
+      return 'The computer wins!';
+    }
+    else {
+      return 'You won!';
+    }
+  }
+  else if (userChoice === 'scissors') {
+    if (computerChoice === 'rock') {
+      return 'The computer wins!';
+    }
+    else {
+      return 'You won!';
+    }
+  }
+
+}
 
 
+const playGame = () => {
+  const userChoice = getUserChoice('paper');
+  const computerChoice = getComputerChoice();
+console.log('You threw:' + userChoice);
+console.log('The computer threw:' + computerChoice);
+console.log(determineWinner(userChoice, computerChoice));
+};
 
-
-
-
-
+playGame();
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -180,15 +227,30 @@ console.log(toCentimeters(3));
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
- function annoyingSong ()  {
-   for(let i = 0; i <= numbers.length; i-- ) {
-     if (numbers.length < 100) {
-       return ("[i]bottles of beer on the wall,[i]bottles of beer. Take one down, pass it around,[i]bottles of beer on the wall!");
-     }
-   }
-}
 
-console.log(annoyingSong(99));
+
+ var word = "bottles";
+ var count = 99;
+ while (count > 0) {
+   if (count == 1){
+     var word = "bottle"
+   }
+     console.log(count + " " + word + " of beer on the wall");
+     console.log(count + " " + word + " of beer,");
+     console.log("Take one down, pass it around,");
+     count = count - 1;
+     if (count > 0) {
+       if (count == 1){
+         var word = "bottle"
+       }
+         console.log(count + " " + word + " of beer on the wall.");
+     } else {
+       if (count < 1){
+         var word = "bottles"
+       }
+         console.log("No more " + word + " of beer on the wall.");
+     }
+ }
 
 
 
@@ -204,18 +266,18 @@ console.log(annoyingSong(99));
 function gradeCalculator(grade) {
   if (grade < 60) {
     return("Your grade is an F!");
-  } else if (grade >= 60 <= 69) {
+  } else if (grade >= 60 && grade <= 69) {
     return("Your grade is a D.");
-  } else if (grade >= 70 <= 79) {
+  } else if (grade >= 70 && grade <= 79) {
     return("Your grade is a C.");
-  } else if (grade >= 80 <= 89) {
+  } else if (grade >= 80 && grade  <= 89) {
   return("Your grade is a B.");
-  } else if (grade >= 90 <= 100) {
+  } else if (grade >= 90 && grade <= 100) {
     return("Your grade is an A!");
   }
 }
 
-console.log(gradeCalculator(76));
+console.log(gradeCalculator(90));
 
 
 
